@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_app/description_place.dart';
 import 'review_list.dart';
-
+import 'gradient_back.dart';
+import 'header_appbar.dart';
 void main() {
+  /*SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarBrightness: Brightness.light
+      )
+  );*/
+
   runApp(MyApp());
 }
 
@@ -28,11 +38,18 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello Mey"),
-        ),
         //body: new DescriptionPlace("In My House...", 3, "Would you like to smoke?"),
-        body: ReviewList(),
+        body: Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget> [
+                DescriptionPlace("La Fortuna", 5, "La Fortuna es una pequeña comunidad de Costa Rica, al noroeste de la capital, San José. Es conocida como una vía de acceso al Parque Nacional Volcán Arenal, que abarca 2 volcanes. El volcán activo Arenal aún tiene flujos de lava. Hay varias termas a los pies del volcán, en el río Tabacón de aguas termales. El volcán inactivo Chato tiene un lago en su cráter y senderos a través de la selva tropical que llegan a la catarata La Fortuna y su piscina natural."),
+                ReviewList()
+              ],
+            ),
+            HeaderAppBar()
+          ],
+        ),
       )
     //MyHomePage(title: 'Flutter Demo Home Page'),
     );
