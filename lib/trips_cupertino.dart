@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ProfileTrips extends StatelessWidget{
+class TripsCupertino extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      color: Colors.greenAccent,
-    );
-  }
-
-}
+    return null;
+  }}
